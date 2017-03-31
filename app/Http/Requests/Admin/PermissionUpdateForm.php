@@ -26,7 +26,6 @@ class PermissionUpdateForm extends FormRequest
     {
         return [
             'permission_name'   => 'required|unique:permissions,permission_name,'.Request::get('permission_id').',permission_id',
-            'location'          => 'required',
             'route'             => 'required'
         ];
     }
@@ -41,7 +40,6 @@ class PermissionUpdateForm extends FormRequest
         return [
             'permission_name.required'      => '权限名称不能为空',
             'permission_name.unique'        => '权限名称已存在',
-            'location.required'             => '标识不能为空',
             'route.required'                => '路由不能为空'
         ];
     }

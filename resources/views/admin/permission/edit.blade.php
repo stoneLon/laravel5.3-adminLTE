@@ -21,15 +21,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="location" class="col-sm-2 control-label">权限标识</label>
-                            <div class="col-sm-6">
-                                <div class="input-group @if($errors->has('location')) has-error @endif">
-                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
-                                    <input type="text" id="location" name="location" value="{{ old('location', $permission->location) }}" class="form-control" placeholder="请输入权限标识" autocomplete="off">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label for="route" class="col-sm-2 control-label">路由</label>
                             <div class="col-sm-6">
                                 <div class="input-group @if($errors->has('route')) has-error @endif">

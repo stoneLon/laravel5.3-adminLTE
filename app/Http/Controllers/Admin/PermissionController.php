@@ -58,7 +58,7 @@ class PermissionController extends Controller
      */
     public function store(PermissionStoreForm $request)
     {
-        $data = $request->only(['permission_name', 'location', 'route', 'status']);
+        $data = $request->only(['permission_name', 'route', 'status']);
         $data = array_filter($data, 'delEmpty');
         $this->permissionRepository->create($data);
         return redirect()->route('admin.permission.index')->with('success', '权限添加成功');
@@ -72,7 +72,7 @@ class PermissionController extends Controller
      */
     public function update(PermissionUpdateForm $request)
     {
-        $data = $request->only(['permission_name', 'location', 'route']);
+        $data = $request->only(['permission_name', 'route']);
         $this->permissionRepository->update($data, $request->permission_id, 'permission_id');
         return redirect()->route('admin.permission.index')->with('success', '权限修改成功');
     }
